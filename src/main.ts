@@ -2,7 +2,8 @@ import {
     NgModule,
     Component,
     Pipe,
-    OnInit
+    OnInit,
+    VERSION
 } from '@angular/core';
 import {
     ReactiveFormsModule,
@@ -140,8 +141,8 @@ class ModelFormComponent implements OnInit {
   password: FormControl;
   language: FormControl;
 
-
   ngOnInit() {
+    console.log('Angular version ' + VERSION.full)
     this.createFormControls();
     this.createForm();
     this.loadinglangs();
