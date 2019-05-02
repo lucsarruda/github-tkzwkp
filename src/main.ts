@@ -132,11 +132,7 @@ import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
 </div>`
 })
 class ModelFormComponent implements OnInit {
-  langs: string[] = [
-    'English',
-    'French',
-    'German',
-  ];
+  langs: string[];
   myform: FormGroup;
   firstName: FormControl;
   lastName: FormControl;
@@ -148,6 +144,7 @@ class ModelFormComponent implements OnInit {
   ngOnInit() {
     this.createFormControls();
     this.createForm();
+    this.loadinglangs();
   }
 
   createFormControls() {
@@ -174,6 +171,15 @@ class ModelFormComponent implements OnInit {
       password: this.password,
       language: this.language
     });
+  }
+
+  loadinglangs() : void {
+    this.langs = [
+      'English',
+      'French',
+      'German',
+      'Chines'
+    ]
   }
 
   onSubmit() {
