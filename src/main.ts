@@ -180,6 +180,13 @@ class ModelFormComponent implements OnInit {
     if (this.myform.valid) {
       console.log("Form Submitted!");
       this.myform.reset();
+    }else{
+      this.myform.get('name').get('firstName').markAsTouched()
+      this.myform.get('name').get('lastName').markAsTouched()
+      this.myform.get('email').markAsTouched()
+      this.myform.get('password').markAsTouched()
+      this.myform.get('language').markAsTouched()
+
     }
   }
 }
